@@ -77,6 +77,7 @@
             // 
             this.txtPass.Location = new System.Drawing.Point(114, 100);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '•';
             this.txtPass.Size = new System.Drawing.Size(149, 20);
             this.txtPass.TabIndex = 4;
             // 
@@ -88,6 +89,7 @@
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // lnkOlvidaPass
             // 
@@ -98,9 +100,11 @@
             this.lnkOlvidaPass.TabIndex = 6;
             this.lnkOlvidaPass.TabStop = true;
             this.lnkOlvidaPass.Text = "Olvidé mi contraseña";
+            this.lnkOlvidaPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvidaPass_LinkClicked);
             // 
             // formLogin
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 203);
@@ -111,7 +115,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ingreso";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
